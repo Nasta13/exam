@@ -1,0 +1,18 @@
+<form [formGroup]="productForm" (ngSubmit)="save()">
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="name">Наименование покупки:</label>
+          <input type="text" class="form-control" id="name" formControlName="name" 
+           />
+        </div>
+        <div class="form-group">
+          <label for="quantity">Количество позиций:</label>
+          <input type="number" class="form-control" id="quantity" formControlName="quantity" />
+         
+        </div>
+        <button type="submit" class="btn btn-primary mt-3" [disabled]="productForm.invalid">Добавить</button>
+      </div>
+    </div>
+  </form>
+  

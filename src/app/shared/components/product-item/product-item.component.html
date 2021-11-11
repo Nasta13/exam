@@ -1,0 +1,32 @@
+<ng-container *ngIf="!editMode; else elseTemplate">
+    <div class="row">
+      <div class="col-12">{{product.name}}</div>
+      <div class="col-12">{{product.quantity}}</div>
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-primary" (click)="editMode=true">Редактировать</button>
+          <button class="btn btn-danger" (click)="delete()">Удалить</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <form [formGroup]="productForm" (ngSubmit)="save()">
+      <div class="row">
+        <div class="col-12">
+          <label for="name">Заголовок:</label>
+          <input type="text" class="form-control" id="name" formControlName="name" />
+        </div>
+        <div class="col-12">
+          <label for="text">Заголовок:</label>
+          <input type="number" class="form-control" id="text" formControlName="quantity" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary"> Сохранить</button>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+  
